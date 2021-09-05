@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text To Speech</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Text To Speech</h1>
+
+    <form class="p-3 text-center" action="/" method="post">
+        <input class="form-control" type="text" name="text">
+        <input class="btn btn-primary" type="submit" value="Read out loud">
+    </form>
+
+    {% if content %}
+        <audio controls autoplay style="display: none;">
+          <source src="{{ content }}" type="audio/mpeg">
+        </audio>
+    {% endif %}
+</body>
+</html>
